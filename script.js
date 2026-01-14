@@ -3,7 +3,7 @@ let allProducts = [];
 
 // WhatsApp da loja
 const whatsappNumber = "5511955921042"; // Verifique se este número está correto e ativo no WhatsApp
-const whatsappMessage = "Olá! Seja bem-vindo(a) à BatataMania!%0A%0AGostaria de fazer um pedido para o seguinte produto: ";
+const whatsappMessage = "Olá! Seja bem-vindo(a) à BATATA D'LAS! Gostaria de fazer um pedido para o seguinte produto: ";
 
 // Função para gerar o link do WhatsApp
 function generateWhatsappLink(productName, productPrice = '') {
