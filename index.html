@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batata Mania - As melhores batatas da região!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-french-fries"></i>
+                <h1>BATATA<span> D'LAS</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">INÍCIO</a></li>
+                    <li><a href="#products">CARDÁPIO</a></li>
+                    <li><a href="#about">SOBRE</a></li>
+                    <li><a href="#contact">CONTATO</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>AS BATATAS MAIS CROCANTES DA CIDADE!</h2>
+            <p>Experimente nossas batatas fritas douradas e recheadas irresistíveis. Feitas com ingredientes selecionados e fritura perfeita!</p>
+            <a href="#products" class="cta-button">VER CARDÁPIO COMPLETO</a>
+        </div>
+    </section>
+
+    <!-- Filtros -->
+    <div class="container">
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">TODOS OS PRODUTOS</button>
+            <button class="filter-btn" data-filter="fritas">BATATAS FRITAS</button>
+            <button class="filter-btn" data-filter="recheadas">BATATAS RECHEADAS</button>
+            <button class="filter-btn" data-filter="especiais">ESPECIAIS</button>
+        </div>
+    </div>
+
+    <!-- Produtos -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="products" id="products-container">
+                <!-- Os produtos serão carregados via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Ofertas -->
+    <section class="offers-section" id="offers">
+        <div class="container">
+            <div class="offers-content">
+                <h2>🎉 Receba Nossas Ofertas!</h2>
+                <p>Cadastre seu WhatsApp e seja o primeiro a saber das nossas novidades e promoções exclusivas.</p>
+                <form action="https://docs.google.com/forms/d/e/1FAIpQLSebYbfFXEWfjD4FP_VF9xHcapxGXiHD1KMGkP-eGjSMhUe6jA/formResponse" method="POST" target="_blank" class="offers-form">
+                    <div class="form-group">
+                        <input type="text" name="entry.1948736301" placeholder="Seu nome" required>
+                        <input type="tel" name="entry.1726740181" placeholder="Seu WhatsApp com DDD" required>
+                    </div>
+                    <div class="form-consent">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <label for="consent">Eu aceito receber promoções e novidades no meu WhatsApp.</label>
+                    </div>
+                    <button type="submit" class="submit-btn">QUERO RECEBER OFERTAS</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BATATAMANIA</h3>
+                    <p>A maior variedade de batatas especiais da região. Crocância e sabor em cada mordida!</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>CONTATO RÁPIDO</h3>
+                    <div class="contact-info">
+                        <div><i class="fas fa-map-marker-alt"></i> Rua das Batatas, 123 - Centro</div>
+                        <div><i class="fas fa-phone"></i> (11) 99999-9999</div>
+                        <div><i class="fas fa-envelope"></i> pedidos@batatamania.com</div>
+                        <div><i class="fas fa-clock"></i> Seg-Sex: 10h-00h | Sáb: 12h-02h</div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>PAGAMENTO</h3>
+                    <p>Pagamento via pix </p>
+                    <p>Logo mais teremos outras formas de pagamento.</p>
+                    <div class="payment-icons">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-pix"></i>
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 BATATAMANIA. TODOS OS DIREITOS RESERVADOS. | CROCÂNCIA QUE VIRA VÍCIO!</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Detalhes do Produto -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
