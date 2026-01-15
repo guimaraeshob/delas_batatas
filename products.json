@@ -15,24 +15,9 @@
             "calorias": "320 kcal"
         }
     },
+    
     {
         "id": 2,
-        "name": "BATATA RECHEADADA FRANGO C/CATUPIRY",
-        "description": "Batata assada no forno recheada com frango desfiado temperado e catupiry cremoso. Finalizada com queijo parmesão gratinado.",
-        "price": "R$ 24,90",
-        "image": "https://images.unsplash.com/photo-1563379091339-03246963d9d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-        "category": "recheadas",
-        "rating": 4.9,
-        "isBestSeller": true,
-        "details": {
-            "tamanho": "Unidade grande (400g)",
-            "ingredientes": "Batata, frango, catupiry, queijo parmesão, cebolinha, temperos especiais",
-            "tempoPreparo": "18-22 minutos",
-            "calorias": "450 kcal"
-        }
-    },
-    {
-        "id": 3,
         "name": "BATATA CHEDDAR & BACON CROCANTE",
         "description": "Nossa batata frita crocante coberta com molho de cheddar cremoso derretido e bacon em cubos crocantes.",
         "price": "R$ 22,50",
@@ -48,7 +33,7 @@
         }
     },
     {
-        "id": 4,
+        "id": 3,
         "name": "BATATA RECHEADADA CALABRESA APIMENTADA",
         "description": "Batata assada recheada com calabresa moída especial, queijo mussarela derretido e temperos apimentados.",
         "price": "R$ 23,90",
@@ -64,7 +49,7 @@
         }
     },
     {
-        "id": 5,
+        "id": 4,
         "name": "BATATA RÚSTICA TEMPERADA NO ALECRIM",
         "description": "Batatas cortadas em pedaços grandes, assadas com azeite extra virgem, alho fresco e alecrim.",
         "price": "R$ 19,90",
@@ -80,11 +65,11 @@
         }
     },
     {
-        "id": 6,
-        "name": "BATATA 4 QUEIJOS SUPREMA",
+        "id": 5,
+        "name": "BATATA  RUSTICA COM CHEDDAR E BACON",
         "description": "Deliciosa batata recheada com uma combinação cremosa de quatro queijos selecionados: mussarela, gorgonzola, parmesão e provolone.",
         "price": "R$ 26,50",
-        "image": "https://images.unsplash.com/photo-1563379091339-03246963d9d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+        "image": "./img/batata-rustica-com-cheddar-e-bacon.jpg",
         "category": "recheadas",
         "rating": 4.9,
         "isBestSeller": true,
@@ -95,29 +80,14 @@
             "calorias": "520 kcal"
         }
     },
+    
     {
-        "id": 7,
-        "name": "BATATA COM QUEIJO COALHO GRELHADO",
-        "description": "Batata frita crocante servida com queijo coalho grelhado no ponto perfeito e molho de pimenta caseiro.",
-        "price": "R$ 21,90",
-        "image": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-        "category": "especiais",
-        "rating": 4.4,
-        "isBestSeller": false,
-        "details": {
-            "tamanho": "Porção média (550g)",
-            "ingredientes": "Batatas, queijo coalho, molho de pimenta caseiro, orégano",
-            "tempoPreparo": "15-20 minutos",
-            "calorias": "480 kcal"
-        }
-    },
-    {
-        "id": 8,
-        "name": "COMBO FAMÍLIA BATATAMANIA",
+        "id": 6,
+        "name": "BATATA DOCE PALITOS ASSADOS",
         "description": "Ideal para compartilhar! Inclui batata frita tradicional + batata recheada (escolha o sabor) + bebida de 2L + molho especial.",
         "price": "R$ 49,90",
-        "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-        "category": "especiais",
+        "image": "./img/batata_doce_palito.jpg",
+        
         "rating": 5.0,
         "isBestSeller": true,
         "details": {
