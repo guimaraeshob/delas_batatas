@@ -1,5 +1,4 @@
-
-        * {
+* {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -72,6 +71,7 @@
             height: 100px; /* Adjust as needed */
             width: auto;
             margin-right: 10px;
+            animation: pulse-logo 3s infinite ease-in-out;
         }
 
 
@@ -593,4 +593,16 @@
             transform: translateY(-3px) scale(1.03);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
-    
+
+        /* Animação do Logo */
+        @keyframes pulse-logo {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
