@@ -18,11 +18,12 @@
             --cinza-escuro: #333333;
             --verde-whatsapp: #25D366;
             --verde-success: #4CAF50;
+            --amarelo-claro: #FFEA99;
             --sombra: rgba(0, 0, 0, 0.15);
         }
 
         body {
-            background-color: var(--cinza-claro);
+            background-color: var(--amarelo-claro);
             color: var(--cinza-escuro);
             line-height: 1.6;
         }
