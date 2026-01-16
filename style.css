@@ -31,7 +31,7 @@
         /* Header e Navegação - AGORA COM VERMELHO PURO */
         header {
             background: linear-gradient(to right, var(--vermelho-primario), var(--laranja-energetico)), 
-                        url('https://images.unsplash.com/photo-1573080496219-bb080dd4f877?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+                        url('./img/batata-rustica-com-cheddar-e-bacon.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -117,7 +117,7 @@
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(255, 0, 0, 0.441), rgba(239, 103, 61, 0.167)), 
-                        url('https://images.unsplash.com/photo-1573080496219-bb080dd4f877?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+                        url('./img/batata-rustica-com-cheddar-e-bacon.jpg');
             background-size: cover;
             background-position: center;
             color: var(--branco);
@@ -755,4 +755,101 @@
 .offers-content:hover .offers-cta-text {
     background-color: var(--laranja-energetico);
     transform: scale(1.05);
+}
+
+/* Error message styles */
+.products.error-state {
+    grid-template-columns: 1fr; /* Override the grid to a single column */
+}
+
+.error-message {
+    background-color: #FFEBEE; /* Light red background */
+    border: 2px solid var(--vermelho-primario);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 600px;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.15);
+}
+
+.error-message h3 {
+    color: var(--vermelho-primario);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.error-message p {
+    font-size: 1.1rem;
+    color: var(--cinza-escuro);
+    line-height: 1.6;
+}
+
+.error-message p:last-of-type {
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+/* Popup de Horários de Funcionamento */
+.hours-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.hours-popup-content {
+    background-color: var(--branco);
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    border: 5px solid var(--amarelo-primario);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.close-hours-popup {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2.5rem;
+    color: var(--vermelho-primario);
+    cursor: pointer;
+    line-height: 1;
+    transition: transform 0.2s;
+}
+
+.close-hours-popup:hover {
+    transform: scale(1.2);
+}
+
+.popup-logo {
+    width: 100px;
+    margin-bottom: 1rem;
+}
+
+.hours-popup-content h2 {
+    color: var(--vermelho-primario);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.hours-popup-content p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.popup-message {
+    font-weight: bold;
+    color: var(--verde-success);
+    margin-top: 1rem;
+    font-size: 1.1rem;
 }

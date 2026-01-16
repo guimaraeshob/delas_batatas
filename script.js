@@ -2,7 +2,7 @@
 let allProducts = [];
 
 // WhatsApp da loja
-const whatsappNumber = "5511955921042"; // Verifique se este número está correto e ativo no WhatsApp
+const whatsappNumber = document.body.dataset.whatsappNumber || "5511955921042"; // Fallback por segurança
 const whatsappMessage = "Olá! Seja bem-vindo(a) à BATATA D'LAS! Gostaria de fazer um pedido para o seguinte produto: ";
 
 // Função para gerar o link do WhatsApp
@@ -152,8 +152,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         allProducts = await response.json();
         loadProducts(); // Carregar todos os produtos inicialmente
     } catch (error) {
-        console.error("Nao foi possivel carregar os produtos:", error);
-        productsContainer.innerHTML = "<p>Nao foi possivel carregar o cardapio. Tente novamente mais tarde.</p>";
+        productsContainer.innerHTML = `
+            <div class="error-message">
+                <h3>Oops! Algo deu errado.</h3>
+                <p>Não foi possível carregar nosso cardápio no momento. Por favor, tente novamente mais tarde.</p>
+                <p>Se o problema persistir, entre em contato conosco.</p>
+            </div>
+        `;
+        productsContainer.classList.add('error-state');
     }
     
     // Exibir o pop-up de horários ao carregar a página
@@ -170,6 +176,19 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
         offersContent.classList.toggle('form-open');
         offersForm.classList.toggle('visible');
+    });
+
+    // Validar formulário de ofertas
+    offersForm.addEventListener('submit', function(e) {
+        const phoneInput = this.querySelector('input[type="tel"]');
+        const phone = phoneInput.value;
+        const phoneRegex = /^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$/; // Regex simples para telefone brasileiro
+
+        if (!phoneRegex.test(phone)) {
+            e.preventDefault(); // Impede o envio do formulário
+            alert('Por favor, insira um número de WhatsApp válido com DDD (Ex: 11999999999).');
+            phoneInput.focus();
+        }
     });
 
     // Suavizar rolagem para âncoras e manipulação da seção "Sobre"

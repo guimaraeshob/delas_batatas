@@ -4,7 +4,7 @@
         "name": "BATATA FRITA TRADICIONAL",
         "description": "Batatas selecionadas, cortadas no ponto perfeito e fritas até ficarem douradas e crocantes. Acompanha molho especial da casa.",
         "price": "R$ 18,90",
-        "image": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+        "image": "./img/batata-rustica-com-cheddar-e-bacon.jpg",
         "category": "fritas",
         "rating": 4.8,
         "isBestSeller": true,
@@ -26,7 +26,7 @@
         "rating": 4.7,
         "isBestSeller": false,
         "details": {
-            "tamanho": "Porção  (300g)",
+            "tamanho": "Porção média (300g)",
             "ingredientes": "Batatas, cheddar, calabresa",
             "tempoPreparo": "30-40 minutos",
             "calorias": "550 kcal (aproximadamente)"
@@ -42,8 +42,8 @@
         "rating": 4.6,
         "isBestSeller": false,
         "details": {
-            "tamanho": "(350g)",
-            "ingredientes": "Batata, calabresa premium, queijo mussarela, pimentão, cebola, pimenta calabresa",
+            "tamanho": "Porção média (350g)",
+            "ingredientes": "Batata, frango desfiado, catupiry, queijo mussarela",
             "tempoPreparo": "20-25 minutos",
             "calorias": "480 kcal (aproximadamente)"
         }
@@ -91,10 +91,26 @@
         "rating": 5.0,
         "isBestSeller": true,
         "details": {
-            "tamanho": "Porção (300g) ",
-            "ingredientes": "Batata Doce FRita (à escolha), molho especial",
+            "tamanho": "Porção média (300g)",
+            "ingredientes": "Batata doce, óleo vegetal, sal, molho especial",
             "tempoPreparo": "20-30 minutos",
             "calorias": "500 kcal (aproximadamente)"
+        }
+    },
+    {
+        "id": 7,
+        "name": "BATATA RÚSTICA COM CHEDDAR E BACON",
+        "description": "Batatas rústicas crocantes, cobertas com cheddar cremoso e pedaços de bacon.",
+        "price": "R$ 25,90",
+        "image": "./img/batata-rustica-com-cheddar-e-bacon.jpg",
+        "category": "especiais",
+        "rating": 4.9,
+        "isBestSeller": false,
+        "details": {
+            "tamanho": "Porção grande (400g)",
+            "ingredientes": "Batatas rústicas, queijo cheddar, bacon, cebolinha",
+            "tempoPreparo": "25-35 minutos",
+            "calorias": "650 kcal (aproximadamente)"
         }
     }
 ]
