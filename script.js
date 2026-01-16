@@ -143,7 +143,7 @@ hoursPopupOverlay.addEventListener('click', (e) => {
 
 // Inicializar a pagina
 document.addEventListener('DOMContentLoaded', async () => {
-    // Buscar os produtos do arquivo JSON
+    // ... (código de busca de produtos existente) ...
     try {
         const response = await fetch('products.json');
         if (!response.ok) {
@@ -158,6 +158,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     // Exibir o pop-up de horários ao carregar a página
     hoursPopupOverlay.style.display = 'flex';
+
+    // Lógica para o acordeão da seção de ofertas
+    const offersContent = document.querySelector('.offers-content');
+    const offersForm = document.querySelector('.offers-form');
+
+    offersContent.addEventListener('click', (e) => {
+        // Impede que o clique em um input ou botão dentro do formulário feche o acordeão
+        if (e.target.closest('form')) {
+            return;
+        }
+        offersContent.classList.toggle('form-open');
+        offersForm.classList.toggle('visible');
+    });
 
     // Suavizar rolagem para âncoras e manipulação da seção "Sobre"
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

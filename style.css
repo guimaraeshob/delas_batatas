@@ -525,11 +525,32 @@
             border-bottom: 3px dashed var(--amarelo-primario);
         }
 
+        .offers-content {
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .offers-content:hover {
+            transform: scale(1.02);
+            background-color: var(--cinza-claro); /* Adiciona um fundo sutil ao passar o mouse */
+        }
+
         .offers-content h2 {
             font-size: 2.5rem;
             color: var(--vermelho-primario);
             margin-bottom: 1rem;
             font-weight: 900;
+        }
+
+        .offers-content h2::after {
+            content: ' ▼';
+            display: inline-block;
+            font-size: 1.5rem;
+            transition: transform 0.4s ease;
+        }
+
+        .offers-content.form-open h2::after {
+            transform: rotate(180deg);
         }
 
         .offers-content p {
@@ -539,48 +560,107 @@
         }
 
         .offers-form {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.7s ease-in-out, opacity 0.5s ease-in-out, margin-top 0.5s ease-in-out;
             max-width: 700px;
             margin: 0 auto;
         }
+        
+        .offers-form.visible {
+            max-height: 500px;
+            opacity: 1;
+            margin-top: 2rem;
+        }
 
-        .form-group {
+        /* Styling for form elements within .offers-form */
+
+        /* Ensure input fields have consistent look */
+        .offers-form .form-group {
             display: flex;
+            flex-wrap: wrap; /* Allow inputs to wrap on smaller screens */
             gap: 1rem;
             margin-bottom: 1.5rem;
         }
-
-        .form-group input {
-            width: 100%;
-            padding: 15px;
+        
+        .offers-form .form-group input {
+            flex: 1 1 calc(50% - 0.5rem); /* Two columns on larger screens, one on smaller */
+            background-color: var(--cinza-claro); /* Light background for inputs */
+            color: var(--cinza-escuro);
             border: 2px solid var(--amarelo-primario);
-            border-radius: 10px;
+            border-radius: 8px; /* Slightly more rounded */
+            padding: 12px 18px; /* Adjust padding for aesthetics */
             font-size: 1rem;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); /* Subtle inner shadow */
             transition: all 0.3s;
         }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: var(--vermelho-primario);
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+        @media (max-width: 480px) {
+            .offers-form .form-group input {
+                flex: 1 1 100%; /* Stack inputs on very small screens */
+            }
         }
 
-        .form-consent {
+
+        .offers-form .form-group input::placeholder {
+            color: var(--cinza-escuro); /* Placeholder color */
+            opacity: 0.7;
+        }
+
+        .offers-form .form-group input:focus {
+            outline: none;
+            border-color: var(--vermelho-primario);
+            box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.2); /* Focus ring effect */
+            background-color: var(--branco);
+        }
+
+        /* Styling for the consent checkbox and label */
+        .offers-form .form-consent {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            margin-bottom: 2rem;
-            font-size: 0.9rem;
+            margin-bottom: 1.5rem; /* Slightly less margin */
+            font-size: 1rem; /* Slightly larger font */
+            color: var(--cinza-escuro);
         }
 
-        .form-consent input {
-            accent-color: var(--vermelho-primario);
-            width: 18px;
-            height: 18px;
+        .offers-form .form-consent input[type="checkbox"] {
+            appearance: none; /* Remove default browser styling */
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--vermelho-primario);
+            border-radius: 4px;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0; /* Prevent shrinking */
+            transition: background-color 0.2s, border-color 0.2s;
         }
 
-        .submit-btn {
-            display: inline-block;
+        .offers-form .form-consent input[type="checkbox"]:checked {
+            background-color: var(--vermelho-primario);
+            border-color: var(--vermelho-primario);
+        }
+
+        .offers-form .form-consent input[type="checkbox"]:checked::before {
+            content: '✓'; /* Checkmark symbol */
+            color: var(--branco);
+            font-size: 16px;
+            line-height: 1;
+        }
+
+        .offers-form .form-consent label {
+            cursor: pointer;
+            user-select: none; /* Prevent text selection */
+        }
+
+        /* Submit button (agora com estilização completa e específica) */
+        .offers-form .submit-btn {
+            display: inline-block; /* Essencial para padding, width */
             background-color: var(--verde-success);
             color: var(--branco);
             padding: 15px 40px;
@@ -593,203 +673,86 @@
             cursor: pointer;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
             text-transform: uppercase;
+            width: auto; 
+            margin-top: 1rem;
         }
 
-        .submit-btn:hover {
+        .offers-form .submit-btn:hover {
             background-color: #388E3C;
             transform: translateY(-3px) scale(1.03);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
-        /* Animação do Logo */
-        @keyframes pulse-logo {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-            100% {
-                transform: scale(1);
-            }
+
+        /* About Section Styles */
+        .about-section {
+            background-color: var(--branco);
+            padding-top: 0;
+            padding-bottom: 0;
+            text-align: center;
+            border-top: 3px solid var(--amarelo-primario);
+            border-bottom: 3px solid var(--amarelo-primario);
+            margin-top: 3rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding-top 0.5s ease-out, padding-bottom 0.5s ease-out;
         }
 
-/* Hours Popup Styles */
-.hours-popup-overlay {
-    display: none; /* Hidden by default */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Darker overlay than product modal */
-    z-index: 1001; /* Higher than product modal */
-    justify-content: center;
-    align-items: center;
-    backdrop-filter: blur(5px); /* Modern blur effect */
-}
+        .about-section.visible {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+            max-height: 1000px; /* A large enough value to accommodate the content */
+        }
 
-.hours-popup-content {
-    background-color: var(--branco);
-    border-radius: 15px;
-    width: 90%;
-    max-width: 400px; /* Slightly smaller than product modal for hours */
-    padding: 1.5rem;
-    position: relative;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border: 5px solid var(--amarelo-primario);
-    animation: fadeInScale 0.5s ease-out forwards;
-}
+        .about-section h2 {
+            font-size: 2.5rem;
+            color: var(--vermelho-primario);
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
 
-.hours-popup-content .popup-logo {
-    max-width: 150px;
-    margin-bottom: 1.5rem;
-    animation: floatLogo 3s ease-in-out infinite;
-}
+        .about-section p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 1rem;
+            line-height: 1.8;
+            color: var(--cinza-escuro);
+        }
 
-.hours-popup-content h2 {
-    font-size: 2.2rem;
-    color: var(--vermelho-primario);
-    margin-bottom: 1rem;
-    font-weight: 900;
-    text-transform: uppercase;
-}
+        .about-section p:last-of-type {
+            margin-bottom: 0;
+        }
 
-.hours-popup-content p {
-    font-size: 1.1rem;
-    color: var(--cinza-escuro);
-    margin-bottom: 0.8rem;
-    line-height: 1.6;
-}
+        @media (max-width: 768px) {
+            .about-section {
+                padding: 3rem 0;
+            }
 
-.hours-popup-content p strong {
-    color: var(--laranja-energetico);
-}
+            .about-section h2 {
+                font-size: 2rem;
+            }
 
-.hours-popup-content .popup-message {
-    margin-top: 1.5rem;
-    font-style: italic;
-    font-weight: 600;
-    color: var(--vermelho-secundario);
-}
-
-.close-hours-popup {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 2rem;
-    cursor: pointer;
-    color: var(--branco); /* White color for contrast on red background */
-    font-weight: 900;
+            .about-section p {
+                font-size: 1rem;
+            }
+        }
+        
+/* Styles for the "Clique aqui" text in the offers section */
+.offers-cta-text {
+    display: inline-block;
+    padding: 5px 10px;
     background-color: var(--vermelho-primario);
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-    border: 2px solid var(--amarelo-primario);
+    color: var(--branco);
+    border-radius: 5px;
+    font-weight: bold;
+    margin-left: 5px;
+    cursor: pointer; /* Redundant but explicit */
+    border: 1px solid var(--amarelo-primario);
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.close-hours-popup:hover {
-    background-color: var(--amarelo-primario);
-    color: var(--vermelho-primario);
-    transform: rotate(90deg) scale(1.1);
-}
-
-/* Animations for popup */
-@keyframes fadeInScale {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@keyframes floatLogo {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-}
-
-/* Responsive adjustments for popup */
-@media (max-width: 480px) {
-    .hours-popup-content {
-        padding: 1.5rem;
-    }
-
-    .hours-popup-content h2 {
-        font-size: 1.8rem;
-    }
-
-    .hours-popup-content p {
-        font-size: 1rem;
-    }
-
-    .close-hours-popup {
-        top: 10px;
-        right: 10px;
-        font-size: 1.8rem;
-        width: 35px;
-        height: 35px;
-    }
-}
-
-/* About Section Styles */
-.about-section {
-    background-color: var(--branco);
-    padding-top: 0;
-    padding-bottom: 0;
-    text-align: center;
-    border-top: 3px solid var(--amarelo-primario);
-    border-bottom: 3px solid var(--amarelo-primario);
-    margin-top: 3rem;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out, padding-top 0.5s ease-out, padding-bottom 0.5s ease-out;
-}
-
-.about-section.visible {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    max-height: 1000px; /* A large enough value to accommodate the content */
-}
-
-.about-section h2 {
-    font-size: 2.5rem;
-    color: var(--vermelho-primario);
-    margin-bottom: 1.5rem;
-    font-weight: 900;
-    text-transform: uppercase;
-}
-
-.about-section p {
-    font-size: 1.1rem;
-    max-width: 800px;
-    margin: 0 auto 1rem;
-    line-height: 1.8;
-    color: var(--cinza-escuro);
-}
-
-.about-section p:last-of-type {
-    margin-bottom: 0;
-}
-
-@media (max-width: 768px) {
-    .about-section {
-        padding: 3rem 0;
-    }
-
-    .about-section h2 {
-        font-size: 2rem;
-    }
-
-    .about-section p {
-        font-size: 1rem;
-    }
+.offers-content:hover .offers-cta-text {
+    background-color: var(--laranja-energetico);
+    transform: scale(1.05);
 }
