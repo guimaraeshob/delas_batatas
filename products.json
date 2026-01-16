@@ -85,16 +85,16 @@
         "id": 6,
         "name": "BATATA DOCE PALITOS FRITAS",
         "description": "Ideal para compartilhar! Inclui batata frita tradicional molho especial.",
-        "price": "R$ 49,90",
+        "price": "R$ 18,90",
         "image": "./img/batata_doce_palito.jpg",
         "category": "fritas",
         "rating": 5.0,
         "isBestSeller": true,
         "details": {
             "tamanho": "Porção (300g) ",
-            "ingredientes": "Batata frita, batata recheada (à escolha), bebida 2L, molho especial",
+            "ingredientes": "Batata Doce FRita (à escolha), molho especial",
             "tempoPreparo": "20-30 minutos",
-            "calorias": "1200 kcal (aproximadamente)"
+            "calorias": "500 kcal (aproximadamente)"
         }
     }
 ]
