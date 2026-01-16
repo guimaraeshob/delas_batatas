@@ -3,7 +3,7 @@ let allProducts = [];
 
 // WhatsApp da loja
 const whatsappNumber = document.body.dataset.whatsappNumber || "5511955921042"; // Fallback por segurança
-const whatsappMessage = "Olá! Seja bem-vindo(a) à BATATA D'LAS!\n\n🍟 Gostaria de fazer um pedido do produto:";
+const whatsappMessage = "Olá! Seja bem-vindo(a) à BATATA D'LAS!\n\n🍟 Gostaria de fazer um pedido do produto:  \n";
 // Função para gerar o link do WhatsApp
 function generateWhatsappLink(productName, productPrice = '') {
     let message = whatsappMessage + productName;
