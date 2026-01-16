@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Exibir o pop-up de horários ao carregar a página
     hoursPopupOverlay.style.display = 'flex';
 
-    // Suavizar rolagem para âncoras
+    // Suavizar rolagem para âncoras e manipulação da seção "Sobre"
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -169,10 +169,34 @@ document.addEventListener('DOMContentLoaded', async () => {
             
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
+                
+                // Comportamento especial para a seção "Sobre"
+                if (targetId === '#about') {
+                    targetElement.classList.toggle('visible');
+
+                    // Se a seção está sendo aberta, role até ela
+                    if (targetElement.classList.contains('visible')) {
+                        const headerOffset = 100; // Espaço para o cabeçalho fixo
+                        // A rolagem só acontece após a transição CSS começar
+                        setTimeout(() => {
+                            const elementPosition = targetElement.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }, 100); // Pequeno delay para garantir que o cálculo da posição seja feito após o elemento ser visível
+                    }
+                } else { // Comportamento de rolagem normal para os outros links
+                    const headerOffset = 100; 
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
             }
         });
     });
