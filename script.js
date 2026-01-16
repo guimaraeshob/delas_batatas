@@ -21,6 +21,10 @@ const modal = document.getElementById('productModal');
 const closeModal = document.querySelector('.close-modal');
 const modalContent = document.getElementById('modalContent');
 
+// Elementos do DOM para o pop-up de horários
+const hoursPopupOverlay = document.getElementById('hoursPopupOverlay');
+const closeHoursPopup = document.querySelector('.close-hours-popup');
+
 // Carregar produtos na pagina
 function loadProducts(filter = 'all') {
     productsContainer.innerHTML = '';
@@ -125,6 +129,18 @@ window.addEventListener('click', (e) => {
     }
 });
 
+// Lógica para o pop-up de horários
+closeHoursPopup.addEventListener('click', () => {
+    hoursPopupOverlay.style.display = 'none';
+});
+
+hoursPopupOverlay.addEventListener('click', (e) => {
+    if (e.target === hoursPopupOverlay) {
+        hoursPopupOverlay.style.display = 'none';
+    }
+});
+
+
 // Inicializar a pagina
 document.addEventListener('DOMContentLoaded', async () => {
     // Buscar os produtos do arquivo JSON
@@ -140,6 +156,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         productsContainer.innerHTML = "<p>Nao foi possivel carregar o cardapio. Tente novamente mais tarde.</p>";
     }
     
+    // Exibir o pop-up de horários ao carregar a página
+    hoursPopupOverlay.style.display = 'flex';
+
     // Suavizar rolagem para âncoras
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {

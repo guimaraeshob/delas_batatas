@@ -488,6 +488,12 @@
             border-radius: 50%;
         }
 
+        .close-modal:hover {
+            background-color: var(--amarelo-primario);
+            color: var(--vermelho-primario);
+            transform: rotate(90deg) scale(1.1);
+        }
+
         .modal-image {
             width: 100%;
             height: 250px;
@@ -607,3 +613,129 @@
                 transform: scale(1);
             }
         }
+
+/* Hours Popup Styles */
+.hours-popup-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Darker overlay than product modal */
+    z-index: 1001; /* Higher than product modal */
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px); /* Modern blur effect */
+}
+
+.hours-popup-content {
+    background-color: var(--branco);
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px; /* Slightly smaller than product modal for hours */
+    padding: 1.5rem;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 5px solid var(--amarelo-primario);
+    animation: fadeInScale 0.5s ease-out forwards;
+}
+
+.hours-popup-content .popup-logo {
+    max-width: 150px;
+    margin-bottom: 1.5rem;
+    animation: floatLogo 3s ease-in-out infinite;
+}
+
+.hours-popup-content h2 {
+    font-size: 2.2rem;
+    color: var(--vermelho-primario);
+    margin-bottom: 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.hours-popup-content p {
+    font-size: 1.1rem;
+    color: var(--cinza-escuro);
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.hours-popup-content p strong {
+    color: var(--laranja-energetico);
+}
+
+.hours-popup-content .popup-message {
+    margin-top: 1.5rem;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--vermelho-secundario);
+}
+
+.close-hours-popup {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--branco); /* White color for contrast on red background */
+    font-weight: 900;
+    background-color: var(--vermelho-primario);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    border: 2px solid var(--amarelo-primario);
+}
+
+.close-hours-popup:hover {
+    background-color: var(--amarelo-primario);
+    color: var(--vermelho-primario);
+    transform: rotate(90deg) scale(1.1);
+}
+
+/* Animations for popup */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes floatLogo {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Responsive adjustments for popup */
+@media (max-width: 480px) {
+    .hours-popup-content {
+        padding: 1.5rem;
+    }
+
+    .hours-popup-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .hours-popup-content p {
+        font-size: 1rem;
+    }
+
+    .close-hours-popup {
+        top: 10px;
+        right: 10px;
+        font-size: 1.8rem;
+        width: 35px;
+        height: 35px;
+    }
+}
