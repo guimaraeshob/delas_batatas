@@ -69,7 +69,7 @@
         }
 
         .logo-img {
-            height: 120px; /* Adjust as needed */
+            height: 140px; /* Adjust as needed */
             width: auto;
             margin-right: 10px;
             animation: pulse-logo 2s ease-in-out;
