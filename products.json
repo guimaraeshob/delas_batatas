@@ -9,7 +9,7 @@
         "rating": 4.8,
         "isBestSeller": true,
         "details": {
-            "tamanho": "Porção média (300g)",
+            "tamanho": "Porção pequena (300g)",
             "ingredientes": "Batatas nobre, óleo vegetal premium, sal marinho, pimenta do reino",
             "tempoPreparo": "30-40 minutos",
             "calorias": "320 kcal (aproximadamente)"
@@ -26,7 +26,7 @@
         "rating": 4.7,
         "isBestSeller": false,
         "details": {
-            "tamanho": "Porção média (300g)",
+            "tamanho": "Porção pequena (300g)",
             "ingredientes": "Batatas, cheddar, calabresa",
             "tempoPreparo": "30-40 minutos",
             "calorias": "550 kcal (aproximadamente)"
@@ -42,7 +42,7 @@
         "rating": 4.6,
         "isBestSeller": false,
         "details": {
-            "tamanho": "Porção média (350g)",
+            "tamanho": "Porção pequena (300g)",
             "ingredientes": "Batata, frango desfiado, catupiry, queijo mussarela",
             "tempoPreparo": "20-25 minutos",
             "calorias": "480 kcal (aproximadamente)"
@@ -58,7 +58,7 @@
         "rating": 4.5,
         "isBestSeller": false,
         "details": {
-            "tamanho": "Porção média (300g)",
+            "tamanho": "Porção pequena (300g)",
             "ingredientes": "Batatas, azeite extra virgem, alho fresco, sal",
             "tempoPreparo": "25-30 minutos",
             "calorias": "350 kcal (aproximadamente)"
@@ -74,7 +74,7 @@
         "rating": 4.9,
         "isBestSeller": true,
         "details": {
-            "tamanho": "Unidade grande (500g)",
+            "tamanho": "Porção pequena (300g)",
             "ingredientes": "Batata, queijo mussarela, catupiry, tomate, orégano",
             "tempoPreparo": "20-25 minutos",
             "calorias": "520 kcal (aproximadamente)"
@@ -92,7 +92,7 @@
         "isBestSeller": false,
         "badgeText": "NOVIDADE DA CASA",
         "details": {
-            "tamanho": "Porção média (300g)",
+            "tamanho": "Porção pequena (300g)",
             "ingredientes": "Batata doce, óleo vegetal, sal, molho especial",
             "tempoPreparo": "20-30 minutos",
             "calorias": "500 kcal (aproximadamente)"
