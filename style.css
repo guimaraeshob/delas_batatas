@@ -69,16 +69,28 @@
         }
 
         .logo-img {
-            height: 100px; /* Adjust as needed */
+            height: 120px; /* Adjust as needed */
             width: auto;
             margin-right: 10px;
-            animation: pulse-logo 3s infinite ease-in-out;
+            animation: pulse-logo 2s ease-in-out;
+        }
+
+        @keyframes pulse-logo {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
 
 
 
         .logo h1 {
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             font-weight: 900;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             letter-spacing: 0.5px;
@@ -687,21 +699,11 @@
         /* About Section Styles */
         .about-section {
             background-color: var(--branco);
-            padding-top: 0;
-            padding-bottom: 0;
+            padding: 4rem 0;
             text-align: center;
             border-top: 3px solid var(--amarelo-primario);
             border-bottom: 3px solid var(--amarelo-primario);
             margin-top: 3rem;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-out, padding-top 0.5s ease-out, padding-bottom 0.5s ease-out;
-        }
-
-        .about-section.visible {
-            padding-top: 4rem;
-            padding-bottom: 4rem;
-            max-height: 1000px; /* A large enough value to accommodate the content */
         }
 
         .about-section h2 {
@@ -852,4 +854,21 @@
     color: var(--verde-success);
     margin-top: 1rem;
     font-size: 1.1rem;
+}
+
+/* Animações de Scroll */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Atraso para animação dos cards de produto */
+.product-card.is-visible {
+    transition-delay: var(--animation-delay, 0s);
 }

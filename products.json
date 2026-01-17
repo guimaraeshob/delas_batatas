@@ -89,28 +89,15 @@
         "image": "./img/batata_doce_palito.jpg",
         "category": "fritas",
         "rating": 5.0,
-        "isBestSeller": true,
+        "isBestSeller": false,
+        "badgeText": "NOVIDADE DA CASA",
         "details": {
             "tamanho": "Porção média (300g)",
             "ingredientes": "Batata doce, óleo vegetal, sal, molho especial",
             "tempoPreparo": "20-30 minutos",
             "calorias": "500 kcal (aproximadamente)"
         }
-    },
-    {
-        "id": 7,
-        "name": "BATATA RÚSTICA COM CHEDDAR E BACON",
-        "description": "Batatas rústicas crocantes, cobertas com cheddar cremoso e pedaços de bacon.",
-        "price": "R$ 25,90",
-        "image": "./img/batata-rustica-com-cheddar-e-bacon.jpg",
-        "category": "especiais",
-        "rating": 4.9,
-        "isBestSeller": false,
-        "details": {
-            "tamanho": "Porção grande (400g)",
-            "ingredientes": "Batatas rústicas, queijo cheddar, bacon, cebolinha",
-            "tempoPreparo": "25-35 minutos",
-            "calorias": "650 kcal (aproximadamente)"
-        }
     }
+    
+
 ]

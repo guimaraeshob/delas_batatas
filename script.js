@@ -32,16 +32,17 @@ function loadProducts(filter = 'all') {
         ? allProducts 
         : allProducts.filter(product => product.category === filter);
     
-    filteredProducts.forEach(product => {
+    filteredProducts.forEach((product, index) => { // Added index here
         const productCard = document.createElement('div');
-        productCard.className = 'product-card';
+        productCard.className = 'product-card scroll-animate'; // Add scroll-animate class
         productCard.dataset.category = product.category;
+        productCard.style.setProperty('--animation-delay', `${index * 100}ms`); // Use index for staggered delay
         
         // Criar estrelas para avaliação
         const stars = '★'.repeat(Math.floor(product.rating)) + '☆'.repeat(5 - Math.floor(product.rating));
         
         productCard.innerHTML = `
-            ${product.isBestSeller ? '<div class="product-badge">🔥 MAIS VENDIDO</div>' : ''}
+            ${product.badgeText ? `<div class="product-badge">✨ ${product.badgeText}</div>` : (product.isBestSeller ? '<div class="product-badge">🔥 MAIS VENDIDO</div>' : '')}
             <img src="${product.image}" alt="${product.name}" class="product-image">
             <div class="product-info">
                 <h3 class="product-title">${product.name}</h3>
@@ -190,7 +191,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
-    // Suavizar rolagem para âncoras e manipulação da seção "Sobre"
+    // Suavizar rolagem para âncoras
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -200,35 +201,42 @@ document.addEventListener('DOMContentLoaded', async () => {
             
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                
-                // Comportamento especial para a seção "Sobre"
-                if (targetId === '#about') {
-                    targetElement.classList.toggle('visible');
+                const headerOffset = 100; 
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-                    // Se a seção está sendo aberta, role até ela
-                    if (targetElement.classList.contains('visible')) {
-                        const headerOffset = 100; // Espaço para o cabeçalho fixo
-                        // A rolagem só acontece após a transição CSS começar
-                        setTimeout(() => {
-                            const elementPosition = targetElement.getBoundingClientRect().top;
-                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                            window.scrollTo({
-                                top: offsetPosition,
-                                behavior: 'smooth'
-                            });
-                        }, 100); // Pequeno delay para garantir que o cálculo da posição seja feito após o elemento ser visível
-                    }
-                } else { // Comportamento de rolagem normal para os outros links
-                    const headerOffset = 100; 
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
             }
         });
+    });
+
+    // Setup Intersection Observer for scroll animations
+    // Add scroll-animate class to static elements (if not already there)
+    document.querySelector('.filters').classList.add('scroll-animate');
+    document.querySelector('.offers-section h2').classList.add('scroll-animate');
+    document.querySelector('.about-section h2').classList.add('scroll-animate');
+    document.querySelectorAll('footer .footer-section h3').forEach(h3 => h3.classList.add('scroll-animate'));
+    document.querySelector('.hero h2').classList.add('scroll-animate');
+    document.querySelector('.hero p').classList.add('scroll-animate');
+    document.querySelector('.hero .cta-button').classList.add('scroll-animate');
+
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target); // Stop observing once it's visible
+            }
+        });
+    }, {
+        threshold: 0.1 // Trigger when 10% of the element is visible
+    });
+
+    // Observe all elements with the 'scroll-animate' class
+    document.querySelectorAll('.scroll-animate').forEach(element => {
+        observer.observe(element);
     });
 });
