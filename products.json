@@ -97,6 +97,24 @@
             "tempoPreparo": "20-30 minutos",
             "calorias": "500 kcal (aproximadamente)"
         }
+    },
+
+    {
+        "id": 6,
+        "name": "BATATA FRITA COM MOLHO CHEDDAR E BACON",
+        "description": "Perfeita para acompanhar seu lanche favorito. Feita com batata selecionada, cortada em palitos e frita até ficar crocante por fora e macia por dentro.",
+        "price": "R$ 25,90",
+        "image": "./img/batata_frita_molho_cheddar_bacon.jpeg",
+        "category": "fritas",
+        "rating": 5.0,
+        "isBestSeller": false,
+        "badgeText": "MAIS VENDIDA",
+        "details": {
+            "tamanho": "Porção média (400g)",
+            "ingredientes": "Batata frita, óleo vegetal, sal, molho cheddar, bacon crocante",
+            "tempoPreparo": "20-30 minutos",
+            "calorias": "550 kcal (aproximadamente)"
+        }
     }
     
 
