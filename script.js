@@ -24,6 +24,25 @@ const modalContent = document.getElementById('modalContent');
 const hoursPopupOverlay = document.getElementById('hoursPopupOverlay');
 const closeHoursPopup = document.querySelector('.close-hours-popup');
 
+// Função para configurar o Intersection Observer
+function setupIntersectionObserver() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target); // Stop observing once it's visible
+            }
+        });
+    }, {
+        threshold: 0.1 // Trigger when 10% of the element is visible
+    });
+
+    // Observe all elements with the 'scroll-animate' class
+    document.querySelectorAll('.scroll-animate').forEach(element => {
+        observer.observe(element);
+    });
+}
+
 // Carregar produtos na pagina
 function loadProducts(filter = 'all') {
     productsContainer.innerHTML = '';
@@ -31,7 +50,11 @@ function loadProducts(filter = 'all') {
     const filteredProducts = filter === 'all' 
         ? allProducts 
         : allProducts.filter(product => product.category === filter);
-    
+
+    if (filteredProducts.length === 0 && filter !== 'all') {
+        productsContainer.innerHTML = `<div class="error-message">Nenhum produto encontrado para esta categoria.</div>`;
+    }
+
     filteredProducts.forEach((product, index) => { // Added index here
         const productCard = document.createElement('div');
         productCard.className = 'product-card scroll-animate'; // Add scroll-animate class
@@ -67,6 +90,9 @@ function loadProducts(filter = 'all') {
         
         productsContainer.appendChild(productCard);
     });
+
+    // Re-setup the observer for the new product cards
+    setupIntersectionObserver();
 }
 
 // Abrir modal com detalhes do produto
@@ -143,15 +169,26 @@ hoursPopupOverlay.addEventListener('click', (e) => {
 
 // Inicializar a pagina
 document.addEventListener('DOMContentLoaded', async () => {
-    // ... (código de busca de produtos existente) ...
     try {
         const response = await fetch('products.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         allProducts = await response.json();
+        
+        // Remove loading message
+        const loadingMessage = document.querySelector('.loading-message');
+        if (loadingMessage) {
+            loadingMessage.remove();
+        }
+
         loadProducts(); // Carregar todos os produtos inicialmente
+
+        // Enable filter buttons
+        filterButtons.forEach(btn => btn.disabled = false);
+
     } catch (error) {
+        console.error("Erro ao carregar produtos:", error);
         productsContainer.innerHTML = `
             <div class="error-message">
                 <h3>Oops! Algo deu errado.</h3>
@@ -166,30 +203,30 @@ document.addEventListener('DOMContentLoaded', async () => {
     hoursPopupOverlay.style.display = 'flex';
 
     // Lógica para o acordeão da seção de ofertas
-    const offersContent = document.querySelector('.offers-content');
+    const offersCta = document.querySelector('.offers-cta-text');
     const offersForm = document.querySelector('.offers-form');
-
-    offersContent.addEventListener('click', (e) => {
-        // Impede que o clique em um input ou botão dentro do formulário feche o acordeão
-        if (e.target.closest('form')) {
-            return;
-        }
+    
+    offersCta.addEventListener('click', (e) => {
+        e.stopPropagation(); // Impede que o evento se propague para o offersContent
+        const offersContent = document.querySelector('.offers-content');
         offersContent.classList.toggle('form-open');
         offersForm.classList.toggle('visible');
     });
 
     // Validar formulário de ofertas
-    offersForm.addEventListener('submit', function(e) {
-        const phoneInput = this.querySelector('input[type="tel"]');
-        const phone = phoneInput.value;
-        const phoneRegex = /^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$/; // Regex simples para telefone brasileiro
+    if (offersForm) {
+        offersForm.addEventListener('submit', function(e) {
+            const phoneInput = this.querySelector('input[type="tel"]');
+            const phone = phoneInput.value;
+            const phoneRegex = /^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$/; // Regex simples para telefone brasileiro
 
-        if (!phoneRegex.test(phone)) {
-            e.preventDefault(); // Impede o envio do formulário
-            alert('Por favor, insira um número de WhatsApp válido com DDD (Ex: 11999999999).');
-            phoneInput.focus();
-        }
-    });
+            if (!phoneRegex.test(phone)) {
+                e.preventDefault(); // Impede o envio do formulário
+                alert('Por favor, insira um número de WhatsApp válido com DDD (Ex: 11999999999).');
+                phoneInput.focus();
+            }
+        });
+    }
 
     // Suavizar rolagem para âncoras
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -222,21 +259,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.querySelector('.hero h2').classList.add('scroll-animate');
     document.querySelector('.hero p').classList.add('scroll-animate');
     document.querySelector('.hero .cta-button').classList.add('scroll-animate');
-
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target); // Stop observing once it's visible
-            }
-        });
-    }, {
-        threshold: 0.1 // Trigger when 10% of the element is visible
-    });
-
-    // Observe all elements with the 'scroll-animate' class
-    document.querySelectorAll('.scroll-animate').forEach(element => {
-        observer.observe(element);
-    });
+    
+    setupIntersectionObserver();
 });

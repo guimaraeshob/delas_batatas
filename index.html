@@ -38,10 +38,10 @@
     <!-- Filtros -->
     <div class="container">
         <div class="filters">
-            <button class="filter-btn active" data-filter="all">TODOS OS PRODUTOS</button>
-            <button class="filter-btn" data-filter="fritas">BATATAS FRITAS</button>
-            <button class="filter-btn" data-filter="recheadas">BATATAS RECHEADAS</button>
-            <button class="filter-btn" data-filter="especiais">ESPECIAIS</button>
+            <button class="filter-btn active" data-filter="all" disabled>TODOS OS PRODUTOS</button>
+            <button class="filter-btn" data-filter="fritas" disabled>BATATAS FRITAS</button>
+            <button class="filter-btn" data-filter="recheadas" disabled>BATATAS RECHEADAS</button>
+            <button class="filter-btn" data-filter="especiais" disabled>ESPECIAIS</button>
         </div>
     </div>
 
@@ -49,6 +49,7 @@
     <section class="products-section" id="products">
         <div class="container">
             <div class="products" id="products-container">
+                <div class="loading-message">Carregando cardápio...</div>
                 <!-- Os produtos serão carregados via JavaScript -->
             </div>
         </div>
