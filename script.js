@@ -78,6 +78,10 @@ function loadProducts(filter = 'all') {
                         <i class="fab fa-whatsapp"></i> PEDIR AGORA
                     </a>
                 </div>
+                <div class="delivery-icons">
+                    <a href="${product.ifoodLink}" target="_blank"><img src="./img/ifood-logo-0.png" alt="Peça pelo iFood"></a>
+                    <a href="${product['99foodLink']}" target="_blank"><img src="./img/99-food-logo-0.png" alt="Peça pelo 99Food"></a>
+                </div>
             </div>
         `;
         

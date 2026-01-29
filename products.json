@@ -8,6 +8,8 @@
         "category": "fritas",
         "rating": 4.8,
         "isBestSeller": true,
+        "ifoodLink": "https://www.ifood.com.br/delivery/sao-paulo-sp/batata-dlas-jardim-primavera/dc221867-9d92-4e92-a741-238d31372138",
+        "99foodLink": "https://www.99food.com/pt-BR/store/batata-dlas/dc221867-9d92-4e92-a741-238d31372138",
         "details": {
             "tamanho": "Porção pequena (300g)",
             "ingredientes": "Batatas nobre, óleo vegetal premium, sal marinho, pimenta do reino",
@@ -25,6 +27,8 @@
         "category": "recheadas",
         "rating": 4.7,
         "isBestSeller": false,
+        "ifoodLink": "https://www.ifood.com.br/delivery/sao-paulo-sp/batata-dlas-jardim-primavera/dc221867-9d92-4e92-a741-238d31372138",
+        "99foodLink": "https://www.99food.com/pt-BR/store/batata-dlas/dc221867-9d92-4e92-a741-238d31372138",
         "details": {
             "tamanho": "Porção pequena (300g)",
             "ingredientes": "Batatas, cheddar, calabresa",
@@ -41,6 +45,8 @@
         "category": "recheadas",
         "rating": 4.6,
         "isBestSeller": false,
+        "ifoodLink": "https://www.ifood.com.br/delivery/sao-paulo-sp/batata-dlas-jardim-primavera/dc221867-9d92-4e92-a741-238d31372138",
+        "99foodLink": "https://www.99food.com/pt-BR/store/batata-dlas/dc221867-9d92-4e92-a741-238d31372138",
         "details": {
             "tamanho": "Porção pequena (300g)",
             "ingredientes": "Batata, frango desfiado, catupiry, queijo mussarela",
@@ -57,6 +63,8 @@
         "category": "recheadas",
         "rating": 4.5,
         "isBestSeller": false,
+        "ifoodLink": "https://www.ifood.com.br/delivery/sao-paulo-sp/batata-dlas-jardim-primavera/dc221867-9d92-4e92-a741-238d31372138",
+        "99foodLink": "https://www.99food.com/pt-BR/store/batata-dlas/dc221867-9d92-4e92-a741-238d31372138",
         "details": {
             "tamanho": "Porção pequena (300g)",
             "ingredientes": "Batatas, azeite extra virgem, alho fresco, sal",
@@ -73,6 +81,8 @@
         "category": "recheadas",
         "rating": 4.9,
         "isBestSeller": true,
+        "ifoodLink": "https://www.ifood.com.br/delivery/guarulhos-sp/batata-dlas-parque-primavera/e558f692-f125-4134-94a1-44dddb8e3299?utm_medium=share",
+        "99foodLink": "https://oia.99app.com/dlp9/dCAntV",
         "details": {
             "tamanho": "Porção pequena (300g)",
             "ingredientes": "Batata, queijo mussarela, catupiry, tomate, orégano",
@@ -91,6 +101,8 @@
         "rating": 5.0,
         "isBestSeller": false,
         "badgeText": "NOVIDADE DA CASA",
+        "ifoodLink": "https://www.ifood.com.br/delivery/sao-paulo-sp/batata-dlas-jardim-primavera/dc221867-9d92-4e92-a741-238d31372138",
+        "99foodLink": "https://www.99food.com/pt-BR/store/batata-dlas/dc221867-9d92-4e92-a741-238d31372138",
         "details": {
             "tamanho": "Porção pequena (300g)",
             "ingredientes": "Batata doce, óleo vegetal, sal, molho especial",
@@ -109,6 +121,8 @@
         "rating": 5.0,
         "isBestSeller": false,
         "badgeText": "MAIS VENDIDA",
+        "ifoodLink": "https://www.ifood.com.br/delivery/sao-paulo-sp/batata-dlas-jardim-primavera/dc221867-9d92-4e92-a741-238d31372138",
+        "99foodLink": "https://www.99food.com/pt-BR/store/batata-dlas/dc221867-9d92-4e92-a741-238d31372138",
         "details": {
             "tamanho": "Porção média (400g)",
             "ingredientes": "Batata frita, óleo vegetal, sal, molho cheddar, bacon crocante",
